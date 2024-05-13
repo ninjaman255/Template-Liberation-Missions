@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="isometric" renderorder="right-down" width="5" height="11" tilewidth="64" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="243">
+ <properties>
+  <property name="Background" value="custom"/>
+  <property name="Background Animation" value="/server/assets/custom/backgrounds/area1/GrayBG.animation"/>
+  <property name="Background Texture" value="/server/assets/custom/backgrounds/area1/Undernet_BG.png"/>
+  <property name="Background Vel X" value="0"/>
+  <property name="Background Vel Y" value="0"/>
+  <property name="Name" value="Test Area"/>
+  <property name="Song" value="/server/assets/music/undernet4theme.ogg"/>
+ </properties>
+ <tileset firstgid="1" source="../assets/tiles/panel base.tsx"/>
+ <tileset firstgid="4" source="../assets/tiles/home_warp.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="5" height="11">
+  <data encoding="csv">
+0,0,0,0,0,
+0,0,0,0,0,
+0,0,0,0,0,
+0,0,0,0,0,
+0,0,1,0,0,
+0,1,1,1,0,
+0,1,1,1,0,
+0,1,1,1,0,
+0,1,1,1,0,
+0,1,1,1,0,
+0,1,1,1,0
+</data>
+ </layer>
+ <objectgroup id="3" name="Object Layer 1">
+  <object id="223" name="Rematch Prog" type="NPC" x="82" y="148">
+   <properties>
+    <property name="Asset Name" value="prog-gold"/>
+    <property name="Dialogue Type" value="question"/>
+    <property name="Direction" value="Down Left"/>
+    <property name="Next 1" type="object" value="225"/>
+    <property name="Next 2" type="object" value="224"/>
+    <property name="Text 1" value="A GREAT BATTLE TOOK PLACE HERE. DO YOU HAVE WHAT IT TAKES TO RELIVE IT?"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="224" name="Said No" type="Dialogue" x="96" y="96">
+   <properties>
+    <property name="Dialogue Type" value="first"/>
+    <property name="Text 1" value="UNDERSTANDABLE. NOT EVERY FIGHT IS MEANT TO BE FOUGHT AGAIN."/>
+   </properties>
+   <point/>
+  </object>
+  <object id="225" name="Said Yes" type="Dialogue" x="64" y="96">
+   <properties>
+    <property name="Dialogue Type" value="first"/>
+    <property name="Next 1" type="object" value="226"/>
+    <property name="Text 1" value="VERY WELL. I WILL RECREATE WHAT YOU HAVE SEEN, THAT YOU MIGHT LIVE IT AGAIN."/>
+   </properties>
+   <point/>
+  </object>
+  <object id="226" name="Trigger Refight" type="Dialogue" x="40" y="40">
+   <properties>
+    <property name="Dialogue Type" value="none"/>
+    <property name="Event Name" value="Refight Liberation"/>
+    <property name="Liberation Map" value="example liberation friendly"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="227" name="Liberation Respawn" type="Spawn Point" x="82.5625" y="210.438">
+   <point/>
+  </object>
+  <object id="229" type="Home Warp" gid="4" x="64" y="288" width="60" height="32">
+   <properties>
+    <property name="Direction" value="Up Right"/>
+   </properties>
+  </object>
+  <object id="230" name="Ability Prog" type="NPC" x="112" y="176">
+   <properties>
+    <property name="Asset Name" value="prog-gold"/>
+    <property name="Dialogue Type" value="first"/>
+    <property name="Direction" value="Up Left"/>
+    <property name="Next 1" type="object" value="231"/>
+    <property name="Text 1">HELLO!
+
+
+I CAN GRANT YOU NEW POWER.
+
+WHAT WOULD YOU LIKE?</property>
+   </properties>
+   <point/>
+  </object>
+  <object id="231" name="Ability Quiz 1" type="dialogue" x="176" y="160">
+   <properties>
+    <property name="Dialogue Type" value="quiz"/>
+    <property name="Next 1" type="object" value="232"/>
+    <property name="Next 2" type="object" value="233"/>
+    <property name="Next 3" type="object" value="238"/>
+    <property name="Text 1" value="GutsHamr"/>
+    <property name="Text 2" value="OldSaber"/>
+    <property name="Text 3" value="Next"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="232" name="Long Sword Question" type="Dialogue" x="232" y="152">
+   <properties>
+    <property name="Dialogue Type" value="question"/>
+    <property name="Next 1" type="object" value="234"/>
+    <property name="Next 2" type="object" value="231"/>
+    <property name="Text 1">GUTS HAMMER
+DESTROYS DARK
+PANELS AHEAD!
+
+DO YOU WANT IT?</property>
+   </properties>
+   <point/>
+  </object>
+  <object id="233" name="Wide Sword Question" type="Dialogue" x="200" y="104">
+   <properties>
+    <property name="Dialogue Type" value="question"/>
+    <property name="Next 1" type="object" value="237"/>
+    <property name="Next 2" type="object" value="231"/>
+    <property name="Text 1">OLD SABER BATTLES
+TO LIBERATE
+Z FORMATION
+DIRECTLY AHEAD.
+
+DO YOU WANT IT?</property>
+   </properties>
+   <point/>
+  </object>
+  <object id="234" name="Give Long Sword Pre" type="Dialogue" x="264" y="152">
+   <properties>
+    <property name="Dialogue Type" value="first"/>
+    <property name="Next 1" type="object" value="235"/>
+    <property name="Text 1" value="ALRIGHT. HERE'S YOUR NEW POWER!"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="235" name="Give Long Sword" type="Dialogue" x="336" y="152">
+   <properties>
+    <property name="Ability Item" value="GutsHamr"/>
+    <property name="Dialogue Type" value="none"/>
+    <property name="Event Name" value="Grant Liberation Mission Ability"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="236" name="Give Wide Sword" type="Dialogue" x="288" y="120">
+   <properties>
+    <property name="Ability Item" value="OldSaber"/>
+    <property name="Dialogue Type" value="none"/>
+    <property name="Event Name" value="Grant Liberation Mission Ability"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="237" name="Give Wide Sword Pre" type="Dialogue" x="248" y="112">
+   <properties>
+    <property name="Dialogue Type" value="first"/>
+    <property name="Next 1" type="object" value="236"/>
+    <property name="Text 1" value="ALRIGHT. HERE'S YOUR NEW POWER!"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="238" name="Ability Quiz 2" type="dialogue" x="288" y="216">
+   <properties>
+    <property name="Dialogue Type" value="quiz"/>
+    <property name="Next 1" type="object" value="239"/>
+    <property name="Next 2" type="object" value="242"/>
+    <property name="Next 3" type="object" value="231"/>
+    <property name="Text 1" value="NumGadgt"/>
+    <property name="Text 2" value="Keep Current"/>
+    <property name="Text 3" value="Previous"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="239" name="Shadow Shoe Question" type="Dialogue" x="248" y="248">
+   <properties>
+    <property name="Dialogue Type" value="question"/>
+    <property name="Next 1" type="object" value="240"/>
+    <property name="Next 2" type="object" value="231"/>
+    <property name="Text 1">NUMBER GADGET
+ALLOWS YOU TO
+SCAN THE FIELD
+INFORNT FOR 
+TRAPS AND ITEMS
+AND AUTO 
+LIBERATE!
+DO YOU WANT THEM?</property>
+   </properties>
+   <point/>
+  </object>
+  <object id="240" name="Give Shadow Shoe Pre" type="Dialogue" x="304" y="304">
+   <properties>
+    <property name="Dialogue Type" value="first"/>
+    <property name="Next 1" type="object" value="241"/>
+    <property name="Text 1" value="ALRIGHT. HERE'S YOUR NEW POWER!"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="241" name="Give Shadow Shoe" type="Dialogue" x="376" y="328">
+   <properties>
+    <property name="Ability Item" value="NumGadgt"/>
+    <property name="Dialogue Type" value="none"/>
+    <property name="Event Name" value="Grant Liberation Mission Ability"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="242" name="Number Gadget Question" type="Dialogue" x="408" y="256">
+   <properties>
+    <property name="Dialogue Type" value="first"/>
+    <property name="Text 1" value="NO PROBLEM. SEE YOU LATER!"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+</map>
